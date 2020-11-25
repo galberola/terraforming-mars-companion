@@ -10,3 +10,6 @@ Keep track of your resources using this application, and automate resources gran
 
 Assets for all the icons were obtained from the [bafolts/terraforming-mars](https://github.com/bafolts/terraforming-mars) project.
 
+# LICENSE
+
+Refer to [LICENSE](./LICENSE)
