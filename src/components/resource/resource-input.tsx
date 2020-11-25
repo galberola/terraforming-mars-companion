@@ -1,7 +1,8 @@
 import React, {Component, useRef} from 'react';
 
-export interface AttributeProps {
+export interface ResourceInputProps {
   amount: number,
+  isProduction?: boolean,
   onAddQuantity: (amount: number) => void,
 }
 
@@ -10,14 +11,14 @@ enum InputAction {
   SUB,
 }
 
-export default class Attribute extends Component<AttributeProps> {
+export default class ResourceInput extends Component<ResourceInputProps> {
   private numberInputRef: HTMLInputElement | null = null;
-  
+
   onClick(action: InputAction) {
     let num: number = 1;
-    
+
     if (this.numberInputRef) {
-      let tmpNum = parseInt(this.numberInputRef.value);      
+      let tmpNum = parseInt(this.numberInputRef.value);
       this.numberInputRef.value = "";
 
       if (isNaN(tmpNum) == false) {
@@ -35,11 +36,16 @@ export default class Attribute extends Component<AttributeProps> {
   }
 
   render() {
-    return <div>
-      # {this.props.amount}<br />
-      <input type="button" onClick={e => this.onClick(InputAction.SUB)} value="-" />
+    let className = "resource-input";
+    if (this.props.isProduction) {
+      className += " resource-input-production";
+    }
+
+    return <div className={className}>
+      <p className="value">{this.props.amount}</p>
+      <input type="button" className="btn btn-danger" onClick={e => this.onClick(InputAction.SUB)} value="-" />
       <input type="number" ref={i => this.numberInputRef = i} />
-      <input type="button" onClick={e => this.onClick(InputAction.ADD)} value="+" />
+      <input type="button" className="btn btn-success" onClick={e => this.onClick(InputAction.ADD)} value="+" />
     </div>
   }
 }
