@@ -1,0 +1,44 @@
+.resource-tab {
+  font-size: 28px;
+}
+
+.resource-tab .production-btn {
+  font-size: 42px;
+}
+
+.resource-item {
+  padding: 10px;
+}
+
+.resource-input {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.resource-input input[type=number] {
+  width: 60px;
+  max-width: 60px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.resource-input input[type=number]::-webkit-outer-spin-button,
+.resource-input input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.resource-input input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.resource-input p {
+  margin: 0;
+  padding: 0;
+}
+
+.resource-input-production {
+  background-color: burlywood;
+}
