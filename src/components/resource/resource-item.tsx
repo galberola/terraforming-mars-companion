@@ -13,7 +13,7 @@ export interface ResourceItemProps {
 
 export default function RenderItem(props: ResourceItemProps) {
   return <div className={"resource-item " + props.className}>
-      <img alt={props.name} src={props.icon} width="64" height="64" />
+      <img alt={props.name} src={props.icon} width="46" height="46" />
       <ResourceInput amount={props.amount} onAddQuantity={quantity => props.onAmountModified(props.name, quantity)} />
       <ResourceInput amount={props.production} isProduction={true} onAddQuantity={quantity => props.onProductionModified(props.name, quantity)} />
     </div>;

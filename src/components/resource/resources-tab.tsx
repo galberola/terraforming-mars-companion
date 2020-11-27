@@ -22,14 +22,18 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
     this.state = {
       generation: 1,
       resources: {
-        "M€": { name: "M€", amount: 0, production: 0, icon: "/img/resources/megacredit.png" },
-        "Steel": { name: "Steel", amount: 0, production: 0, icon: "/img/resources/steel.png" },
-        "Titanium": { name: "Titanium", amount: 0, production: 0, icon: "/img/resources/titanium.png" },
-        "Plant": { name: "Plant", amount: 0, production: 0, icon: "/img/resources/plant.png" },
-        "Energy": { name: "Energy", amount: 0, production: 0, icon: "/img/resources/power.png" },
-        "Heat": { name: "Heat", amount: 0, production: 0, icon: "/img/resources/heat.png" },
+        "M€": { name: "M€", amount: 0, production: 0, icon: this.getImageUrl("megacredit") },
+        "Steel": { name: "Steel", amount: 0, production: 0, icon: this.getImageUrl("steel") },
+        "Titanium": { name: "Titanium", amount: 0, production: 0, icon: this.getImageUrl("titanium") },
+        "Plant": { name: "Plant", amount: 0, production: 0, icon: this.getImageUrl("plant") },
+        "Energy": { name: "Energy", amount: 0, production: 0, icon: this.getImageUrl("power") },
+        "Heat": { name: "Heat", amount: 0, production: 0, icon: this.getImageUrl("heat") },
       }
     }
+  }
+
+  private getImageUrl(resource: string) : string {
+    return `${process.env.PUBLIC_URL}/img/resources/${resource}.png`;
   }
 
   onAmountModified(name: string, quantity: number) {
@@ -65,10 +69,10 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
   }
 
   render() {
-    const itemStyle = "col-md-4 col-sm-6 col-xs-6";
+    const itemStyle = "col-6 col-sm-6 col-md-4";
 
-    return <div className="resource-tab">
-      <div className="row">
+    return <div className="resource-tab container">
+      <div className="row no-gutters">
         <ResourceItem
           className={itemStyle}
           {...this.state.resources["M€"]}
@@ -86,8 +90,9 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
           {...this.state.resources["Titanium"]}
           onAmountModified={(name, quantity) => this.onAmountModified(name, quantity)}
           onProductionModified={(name, quantity) => this.onProductionModified(name, quantity)} />
-      </div>
-      <div className="row">
+
+      {/* </div>
+      <div className="row"> */}
         <ResourceItem
           className={itemStyle}
           {...this.state.resources["Plant"]}
