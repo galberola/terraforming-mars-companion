@@ -1,4 +1,4 @@
-# Unoficial Terraforming Mars Companion
+# Unofficial Terraforming Mars Companion
 
 Keep track of your resources using this application, and automate resources grant on each "production phase".
 
