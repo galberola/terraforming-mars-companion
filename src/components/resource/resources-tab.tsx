@@ -22,7 +22,7 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
     this.state = {
       generation: 1,
       resources: {
-        "TR": { name: "TR", amount: 0, production: 0, icon: this.getImageUrl("tr") },
+        "TR": { name: "TR", amount: 20, production: 0, icon: this.getImageUrl("tr") },
         "M€": { name: "M€", amount: 0, production: 0, icon: this.getImageUrl("megacredit") },
         "Steel": { name: "Steel", amount: 0, production: 0, icon: this.getImageUrl("steel") },
         "Titanium": { name: "Titanium", amount: 0, production: 0, icon: this.getImageUrl("titanium") },
