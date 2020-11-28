@@ -22,6 +22,7 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
     this.state = {
       generation: 1,
       resources: {
+        "TR": { name: "TR", amount: 0, production: 0, icon: this.getImageUrl("tr") },
         "M€": { name: "M€", amount: 0, production: 0, icon: this.getImageUrl("megacredit") },
         "Steel": { name: "Steel", amount: 0, production: 0, icon: this.getImageUrl("steel") },
         "Titanium": { name: "Titanium", amount: 0, production: 0, icon: this.getImageUrl("titanium") },
@@ -62,6 +63,9 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
       resources[key].amount += resources[key].production;
     })
 
+    // MegaCredits are also increased by the TR (Terraforming Rating)
+    resources["M€"].amount += resources["TR"].amount;
+
     this.setState({
       generation: this.state.generation + 1,
       resources
@@ -72,6 +76,14 @@ export default class ResourcesTab extends Component<{}, ResourcesTabState> {
     const itemStyle = "col-6 col-sm-6 col-md-4";
 
     return <div className="resource-tab container">
+      <div className="row no-gutters">
+      <ResourceItem
+          className={itemStyle}
+          {...this.state.resources["TR"]}
+          hideProduction={true}
+          onAmountModified={(name, quantity) => this.onAmountModified(name, quantity)}
+          onProductionModified={() => {}} />
+      </div>
       <div className="row no-gutters">
         <ResourceItem
           className={itemStyle}

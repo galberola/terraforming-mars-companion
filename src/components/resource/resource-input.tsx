@@ -41,11 +41,31 @@ export default class ResourceInput extends Component<ResourceInputProps> {
       className += " resource-input-production";
     }
 
+    if (this.props.isProduction === true) {
+      return <div className={className}>
+        <div className="row no-gutters">
+        <p className="col-1 col-sm-1"></p>
+        <input type="button" className="btn btn-danger col-2 col-sm-2" onClick={e => this.onClick(InputAction.SUB)} value="-" />
+        <p className="col-1 col-sm-1"></p>
+        <p className="value col-4 col-sm-4 align-self-center">{this.props.amount}</p>
+        <p className="col-1 col-sm-1"></p>
+        <input type="button" className="btn btn-success col-2 col-sm-2" onClick={e => this.onClick(InputAction.ADD)} value="+" />
+        <p className="col-1 col-sm-1"></p>
+      </div>
+      </div>
+    }
+
     return <div className={className}>
       <p className="value">{this.props.amount}</p>
-      <input type="button" className="btn btn-danger" onClick={e => this.onClick(InputAction.SUB)} value="-" />
-      <input type="number" ref={i => this.numberInputRef = i} />
-      <input type="button" className="btn btn-success" onClick={e => this.onClick(InputAction.ADD)} value="+" />
+      <div className="row no-gutters">
+        <p className="col-1 col-sm-1"></p>
+        <input type="button" className="btn btn-danger col-2 col-sm-2" onClick={e => this.onClick(InputAction.SUB)} value="-" />
+        <p className="col-1 col-sm-1"></p>
+        <input type="number" className="col-4 col-sm-4 align-self-center" ref={i => this.numberInputRef = i} />
+        <p className="col-1 col-sm-1"></p>
+        <input type="button" className="btn btn-success col-2 col-sm-2" onClick={e => this.onClick(InputAction.ADD)} value="+" />
+        <p className="col-1 col-sm-1"></p>
+      </div>
     </div>
   }
 }
