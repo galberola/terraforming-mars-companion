@@ -1,22 +1,36 @@
 .resource-tab {
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
+.resource-tab .generation,
 .resource-tab .production-btn {
-  font-size: 18px;
+  font-size: 1em;
+}
+
+.resource-tab .generation {
+  margin-bottom: 0;
 }
 
 .resource-item {
   padding-top: .2em;
+  font-family: monospace;
 }
 
 .resource-input input[type=number] {
-  width: 40px;
-  max-width: 40px;
-  margin-left: .7em;
-  margin-right: .7em;
+  text-align: center;
 }
 
+.resource-input p {
+  margin: 0;
+  padding: 0;
+}
+
+.resource-input-production {
+  background-color: burlywood;
+  margin-top: .3em;
+}
+
+/* Hide arrows in Input Number element */
 /* Chrome, Safari, Edge, Opera */
 .resource-input input[type=number]::-webkit-outer-spin-button,
 .resource-input input[type=number]::-webkit-inner-spin-button {
@@ -29,11 +43,4 @@
   -moz-appearance: textfield;
 }
 
-.resource-input p {
-  margin: 0;
-  padding: 0;
-}
 
-.resource-input-production {
-  background-color: burlywood;
-}

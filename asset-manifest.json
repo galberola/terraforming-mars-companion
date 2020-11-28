@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/terraforming-mars-companion/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/terraforming-mars-companion/static/js/main.89d615b6.chunk.js",
-    "main.js.map": "/terraforming-mars-companion/static/js/main.89d615b6.chunk.js.map",
+    "main.js": "/terraforming-mars-companion/static/js/main.77b69998.chunk.js",
+    "main.js.map": "/terraforming-mars-companion/static/js/main.77b69998.chunk.js.map",
     "runtime-main.js": "/terraforming-mars-companion/static/js/runtime-main.4f3a8cf0.js",
     "runtime-main.js.map": "/terraforming-mars-companion/static/js/runtime-main.4f3a8cf0.js.map",
     "static/js/2.e5b61f02.chunk.js": "/terraforming-mars-companion/static/js/2.e5b61f02.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4f3a8cf0.js",
     "static/js/2.e5b61f02.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.89d615b6.chunk.js"
+    "static/js/main.77b69998.chunk.js"
   ]
 }
